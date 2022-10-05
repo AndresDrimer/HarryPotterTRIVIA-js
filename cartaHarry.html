@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter TRIVIA</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Amethysta&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts.css">
+</head>
+<body id="bodyCartaHarry">
+
+    <div id="headerTemplate">
+        <div id="headerTemplate">
+            <div id="headerDesktop"></div>
+            <div id="contenedorLogoHeader">
+                <div id="flexLogoHeader">
+                    <img src='img/desktop/signoPregunta.png' class="signoPreguntaLogoHeader">
+                    <img src='img/desktop/HARRY logo.png' id="logoHeader">
+                    <img src='img/desktop/signoPregunta.png' class="signoPreguntaLogoHeader">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- hasta aca header -->
+<audio src="./audio/AparicionLlegada-Impertecmi.mp3" id="soundInit" ></audio>
+<audio src="./audio/ytmp3free.cc_harry-potter-theme-song-youtubemp3free.org.mp3" id="song" ></audio>
+<audio src="./audio/victory-sound.mp3" id="victory-sound"></audio>
+
+
+<div id="flex-cont-fotoMasSelects">
+    <div class="contenedorNombre" id="app">           
+        <div class="selectorArea" id="selectorNombre">
+            <input type="text" id="inputNombre" placeholder="insert full name" required>
+            <button type="submit" id="showMagicName">ok</button>
+        </div>
+            <hgroup id="reverseNameContainer">
+                
+                <h6 id="yourMagicNameIs"></h6>
+                <h1 id="reverseNameDiv"></h1>
+                
+           </hgroup>
+            
+        </div>
+    </div>
+</div>    
+
+   
+
+
+<div id="divCartaMasSelects">
+    <div id="photo-frame">
+        <div id="fotoCarta">
+        </div>
+    </div>
+    
+    <div class="contenedorCartaHarry" id="datosCarta">
+        <p class="chooseText">choose character:</p>
+        <div class="selectorArea" id="selectorNombre2" >
+            
+            <select id="selectChar" class="selectEach">
+                
+            </select>   
+        </div>
+
+        <div class="selectorArea">
+            <p class="chooseText">choose house:</p>
+            <select id="selectHouse" class="selectEach" >
+                 
+            </select>
+        </div>
+
+        <div class="selectorArea">  
+            <p class="chooseText">choose actor/actress:</p> 
+            <select id="selectActore" class="selectEach" ">
+                
+            </select>
+        </div>
+
+        <div id="botoneraFinal">
+             <input type="submit" value="SEND" class="botonRojo" id="botonEnviar">
+             <input type="submit" value="NEW CARD" class="botonRojo" id="botonNewCard">
+       
+            </div>
+    </div>
+</div>
+    
+        
+            <!-- PUNTAJES -->
+    <div id="seccionPuntajes">
+        <div id="pergaminoPuntaje">
+            <br><br>
+            <h3 class="legendary">Legendary Scores:</h3>
+            <h3 class="legendary">*********************</h3>
+            <ul id="listaPuntajes">
+                                     
+            </ul>
+        </div>
+    </div>
+
+
+      
+
+    <!-- <script src="nombreMagico.js"></script> -->
+    <script src="scriptCarta.js"></script>
+    
+</html>

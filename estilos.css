@@ -1,0 +1,380 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+root{
+    --amarillo: #D68F58;
+    --bordo: #762A2F;
+    --negro: #21211F;
+    --gris: #8A757E;
+    --blanco: #F4F3F1;
+    --azul: #8aa6aa;
+}
+
+body{
+    font-family: 'Amethysta', serif;
+    background-color: #fde9d5;
+}
+
+
+/* INDEX */
+
+#bodyIndex{
+    background-image: url('img/desktop/fondo landing desktop.png');
+    object-fit: fill;
+}
+
+.contenedorLogoIndex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    
+}
+
+.signoPreguntaIndex{
+    height: 12em;
+}
+
+#logoIndex{
+    height: 24em;
+    padding-bottom: 10px;
+}
+
+/* CARTA HARRY: HEADER */
+#bodyCartaHarry{
+    animation: transitionIn 0.5s;
+}
+@keyframes transitionIn {
+    from {
+        opacity:0 ;
+        transform: translateY(20000px); 
+    }
+    to {
+        opacity:1 ;
+        transform: translateY(0px); 
+    }
+}
+
+#headerDesktop{
+    max-width: 100vw;
+    min-width: 25vw;
+    position: relative;
+    height: 20vh;
+    background-image: url("img/desktop/headerDesktopFondo.png");
+    object-fit: fill;    
+}
+@media (max-width: 400px){
+    #headerDesktop{
+    height:9vh ;
+    }
+}
+
+#contenedorLogoHeader{  
+    position: absolute;
+    width: 700px;
+    top: 10%;  
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    display:flex;
+    justify-content: center;
+
+}
+@media (max-width: 400px){
+    #contenedorLogoHeader{
+        width: 50px;
+    }
+}
+
+#flexLogoHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    scale: calc(0.7);
+    
+   
+}
+
+.signoPreguntaLogoHeader{
+    height: 152px;
+}
+#logoHeader{
+    height: 169px;
+}
+
+
+
+
+/* CARTA HARRY: MAIN */
+#flex-cont-fotoMasSelects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    max-width: 350px;
+}
+
+#reverseNameContainer{
+    margin: 25px auto;
+    display: none;
+    font-family: Harry;
+    font-size: 1.5em; 
+    /*animation: transitionSale 2s;*/
+}
+@keyframes transitionSale {
+    from {
+        opacity:1 ;
+    }
+    to {
+        opacity:0 ; 
+    }
+}
+
+
+#dibujoHarry{
+    height: 50px;
+    align-items: center;
+}
+.contenedorCartaHarry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 20px; */
+    width: 180px;
+    height:400px
+}
+#photo-frame{
+    background-image: url("./img/marco.png");
+    background-repeat: no-repeat;   
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+    
+}
+#fotoCarta{
+    height: 65%;
+    width: 20em;
+    margin-top:-22px;
+    background-repeat: no-repeat;
+   /* border-radius: 50% 20% / 10% 40%;*/
+    background-size:cover;
+    clip-path: inset(1px 30px 0px 60px);
+}
+#datosCarta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#divCartaMasSelects{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top:10px;
+
+}
+.selectorArea{
+    width: 10em;
+    padding: 12px 0;
+    color: #21211F;
+}
+.titulitoSelect{
+    text-align: center;
+    padding-bottom: 3px;
+}
+.selectEach{
+    background-color:#F4F3F1;;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+}
+
+.selectEach:focus{
+    border:5px double #762A2F;
+}
+
+.botonRojo{
+    background-color:#762A2F;
+    padding: 2px 5px;
+    height: 40px;
+    color: #F4F3F1;  
+    margin-top: 50px;
+}
+#botonNewCard{
+    margin-left:10px;
+    background-color:#8aa6aa;
+}
+#botoneraFinal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+}
+
+
+/* NOMBRE */
+
+.contenedorNombre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: 0 auto;
+}
+
+#selectorNombre, #selectorNombre2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+#selectorNombre2{
+    margin-top:-10px;
+}
+
+#inputNombre, #showMagicName{
+    height: 40px
+}
+#showMagicName{
+    background-color:#8aa6aa;
+    color: #F4F3F1;
+    padding: 0px 3px;
+}
+#reverseNameContainer{
+    display: flex;
+    flex-direction: row;
+}
+#reverseNameDiv{
+    margin-top: 10px;
+}
+#inputNombre{
+    background-color:#F4F3F1;
+    text-align: center;
+    margin-right: 10px;
+}
+#inputNombre:focus{
+    background-color:#F4F3F1;
+    
+    width: 80%;
+    text-align: center;      
+}
+
+#botoneraFinalNombre{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 12px 0;
+}
+.botonAmarillo{
+    background-color:#D68F58;
+    width: 45%;
+    height: 40px;
+    color: #F4F3F1;
+    margin-top: -10px;  
+}
+
+.textoPadding{
+    padding: 20px 0;
+}
+
+#textoMensaje{
+padding-top: 55px;
+font-size: 25px;
+text-align: center;
+}
+
+#harryCarita{
+    display: flex;
+    justify-content: center;
+}
+   
+
+ /* PUNTAJE  */
+ #seccionPuntajes{
+    display: flex;
+    justify-content: center;
+ }
+
+#pergaminoPuntaje{
+    margin-top: 0px;
+    width: 400px;
+    height: 300px;
+    background-image: url("img/pergamino_ok.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+} 
+.legendary, .chooseText{
+    text-align: center;
+}
+
+#listaPuntajes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    font-family: Harry;
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    list-style: none;
+}
+#botonNewCard{
+    display: none;
+}
+.listaRecords{
+    font-family: Harry;
+    font-size: 20px;
+    margin-top: 55px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    list-style-type: none;
+}
+
+#puntajePropio{
+    font-size: 25px;
+}
+.botonLink{
+    text-decoration: none;
+    color:#F4F3F1
+}
+
+#recordOk{
+    border: dotted 5px #8A757E;
+    color: green;
+    text-align: center;
+    font-family: Harry;
+    font-size: 30px;
+    max-width: 300px;
+
+}
+/* ADIOS */
+#logoAdios{
+    margin-top: 14%;
+}
+
+
+
+/* RESPONSIVE */
+/* celular */
+@media screen and (max-width: 768px) {
+#contenedorLogoHeader{
+    width: 500px;
+    }
+.contenedorCartaHarry{
+    width: 332px;
+    }
+}
+
+/* tablet */
+@media screen and (max-width: 1440px) and (min-width: 768px){ 
+}
+
+/* pc escritorio */
+@media screen and (min-width: 1440px){    
+}   
