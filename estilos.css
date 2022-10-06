@@ -355,22 +355,26 @@ text-align: center;
 /* RESPONSIVE */
 /* celular */
 @media screen and (max-width: 768px) {
-#contenedorLogoHeader{
+    .contenedorLogoIndex{
+        margin-top: -25px;
+    }
+    #contenedorLogoHeader{
     width: 100%;
     }
-.contenedorCartaHarry{
+    .contenedorCartaHarry{
     width: 200px;
     }
 
-#divCartaMasSelects{
+    #divCartaMasSelects{
      width:200px;
- }
- #datosCarta{
+    }
+    #datosCarta{
     width: 30px;
     margin-left: 70px;
- }#photo-frame{
+    }
+    #photo-frame{
     margin-left:210px;
- }
+    }
 
 }
 /* tablet */
