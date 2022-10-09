@@ -44,7 +44,7 @@ body{
     padding-bottom: 10px;
 }
 
-/* CARTA HARRY: HEADER */
+/* CARTA HARRY */
 
 
 #bodyCartaHarry{
@@ -61,36 +61,25 @@ body{
     }
 }
 
-#headerDesktop{
+#headerDesktop{ 
     width: 100vw;
-    position: relative;
     height: 20vh;
-    background-image: url("img/desktop/headerDesktopFondo.png");
-    object-fit: fill;    
-}
-@media (max-width: 250px){
-    #headerDesktop{
-        width: 100%;
-    }
+    background-image: url("img/desktop/headerDesktopFondo.png"); 
+    border: 3px solid black;
 }
 
 #contenedorLogoHeader{  
     position: absolute;
-    width: 700px;
     top: 10%;  
     left: 50%;
     transform: translate(-50%, -50%);    
-    display:flex;
-    justify-content: center;
-
 }
-
 
 #flexLogoHeader{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    scale: calc(0.7);
+    scale: calc(0.55);
 }
 
 .signoPreguntaLogoHeader{
@@ -100,7 +89,8 @@ body{
     height: 169px;
 }
 
-/* CARTA HARRY: MAIN */
+
+
 #flex-cont-fotoMasSelects{
     display: flex;
     flex-direction: column;
@@ -127,10 +117,7 @@ body{
 }
 
 
-#dibujoHarry{
-    height: 50px;
-    align-items: center;
-}
+
 .contenedorCartaHarry{
     display: flex;
     flex-direction: column;
@@ -161,6 +148,7 @@ body{
     flex-direction: column;
     justify-content: center;
 }
+
 #divCartaMasSelects{
     display: flex;
     flex-direction: row;
@@ -169,7 +157,6 @@ body{
     margin-top: 10px;
     flex-wrap: nowrap;
 }
-
 
 .selectorArea{
     width: 10em;
@@ -357,27 +344,6 @@ text-align: center;
 /* RESPONSIVE */
 /* celular */
 @media screen and (max-width: 768px) {
-    .contenedorLogoIndex{
-        margin-top: -25px;
-    }
-    #contenedorLogoHeader{
-    width: 100%;
-    }
-    .contenedorCartaHarry{
-    width: 200px;
-    }
-
-    #divCartaMasSelects{
-     width:200px;
-    }
-    #datosCarta{
-    width: 30px;
-    margin-left: 70px;
-    }
-    #photo-frame{
-    margin-left:210px;
-    }
-
 }
 /* tablet */
 @media screen and (max-width: 1440px) and (min-width: 768px){ 
