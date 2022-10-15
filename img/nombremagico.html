@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter TRIVIA</title>
+    <link rel="stylesheet" href="./static/css/bootstrap.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Amethysta&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="icon" type="image/jpg" href="./img/favicon.ico"/>
+</head>
+<body id="bodyCartaHarry">
+
+   
+        <div id="headerDesktop"></div>
+            <div id="contenedorLogoHeader">
+                <div id="flexLogoHeader">
+                    <img src='img/desktop/signoPregunta.png' class="signoPreguntaLogoHeader">
+                    <img src='img/desktop/HARRY logo.png' id="logoHeader">
+                    <img src='img/desktop/signoPregunta.png' class="signoPreguntaLogoHeader">
+                </div>
+        </div>  
+    
+
+    <!-- hasta aca header -->
+
+<audio src="./audio/AparicionLlegada-Impertecmi.mp3" id="soundInit" ></audio>
+<audio src="./audio/ytmp3free.cc_harry-potter-theme-song-youtubemp3free.org.mp3" id="song" ></audio>
+<audio src="./audio/victory-sound.mp3" id="victory-sound"></audio>
+
+
+
+
+<div id="main">
+    <div class="contenedorNombre" id="app">           
+        <div class="selectorArea" id="selectorNombre">
+            <input type="text" id="inputNombre" placeholder="insert full name" required>
+            <button type="submit" id="showMagicName">ok</button>
+        </div>
+            <hgroup id="reverseNameContainer">
+                <h6 id="yourMagicNameIs"></h6>
+                <h1 id="reverseNameDiv"></h1>
+                
+           </hgroup>
+            
+        </div>
+    </div>
+   
+    <script src="./static/js/bootstrap.bundle.js"></script>
+    <script src="nombreMagico.js"></script> 
+       
+    </body>
+    </html>

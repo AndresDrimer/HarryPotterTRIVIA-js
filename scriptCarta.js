@@ -162,8 +162,10 @@ async function traerCarta() {
 function nuevaCarta() {
     listaPuntajes.innerHTML="";
     traerCarta()
-    botonNewCard.style.display= "none"
-    botonEnviar.style.display= "inline-block"
+    botonNewCard.style.display= "none";
+    botonEnviar.style.display= "inline-block";
+    
+
 }
 
 function puntuar() {
