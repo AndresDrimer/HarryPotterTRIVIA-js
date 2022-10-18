@@ -5,21 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harry Potter TRIVIA</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.css">
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="./static/css/bootstrap.css">
+    <link rel="stylesheet" href="./static/css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Amethysta&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./static/css/fonts.css">
     <link rel="icon" type="image/jpg" href="./img/favicon.ico"/>
 </head>
-<body id="bodyCartaHarry" class="container">
+<body id="bodyCartaHarry">
 
    
-        <div id="headerDesktop" class="container">
-            <div id="contenedorLogoHeader" class="row">
-                <div id="flexLogoHeader" class="col">
-                    <img src='img/desktop/signoPregunta.png' class="signoPreguntaLogoHeader">
-                    <img src='img/desktop/HARRY logo.png' id="logoHeader">
-                    <img src='img/desktop/signoPregunta.png' class="signoPreguntaLogoHeader">
+        <div id="headerDesktop">
+            <div id="contenedorLogoHeader">
+                <div id="flexLogoHeader">
+                    <img src="./img/LOGO-harrypotter-js3.png" alt="logo-harry-trivia" id="logo-harry-carta">
                 </div>
             </div>
         </div>  
@@ -31,13 +29,13 @@
 <audio src="./audio/victory-sound.mp3" id="victory-sound"></audio>
 
 
-<div class="container-fluid">
-    <div class="row" id="app">           
-        <div class="col" id="selectorNombre">
+<div>
+    <div id="app">           
+        <div id="selectorNombre">
             <input type="text" id="inputNombre" placeholder="your name" required>
             <button type="submit" id="showMagicName">ok</button>
         </div>
-            <hgroup id="reverseNameContainer" class="col">
+            <hgroup id="reverseNameContainer">
                 <h6 id="yourMagicNameIs"></h6>
                 <h1 id="reverseNameDiv"></h1>
                 
@@ -47,11 +45,9 @@
     </div>
 </div>    
 
-   
-
-<div class="foto container">
-    <div id="divCartaMasSelects" class="row d-flex justify-content-center align-items-center">
-        <div id="photo-frame" class="col">
+<div class="foto">
+    <div id="divCartaMasSelects">
+        <div id="photo-frame" >
             <div id="fotoCarta">
             </div>
         </div>
@@ -91,12 +87,12 @@
 </div>
         
             <!-- PUNTAJES -->
-    <div id="seccionPuntajes" class="container">
-        <div id="pergaminoPuntaje" class="row">
+    <div id="seccionPuntajes">
+        <div id="pergaminoPuntaje">
             <br><br>
-            <div class="col">
-                <h3 class="legendary">Legendary Scores:</h3>
-                <h3 class="legendary">*********************</h3>
+            <div>
+                <h3 class="legendary" id="legendary"></h3>
+                <h2 class="legendary" id="asteriscos"></h2>
                 <ul id="listaPuntajes">
                                         
                 </ul>
@@ -110,6 +106,6 @@
 
     <!-- <script src="nombreMagico.js"></script> -->
     <script src="./static/js/bootstrap.bundle.js"></script>
-    <script src="./scriptCarta.js"></script>
+    <script src="./static/js/scriptCarta.js" type="module"></script>
     
 </html>

@@ -1,5 +1,4 @@
-
-
+import { numeroPosibleAzar } from './randomNum.js'
 /*declaracion de variables*/
 
 const urlTodos = 'https://hp-api.herokuapp.com/api/characters';
@@ -9,7 +8,7 @@ let nombreMal2 = "";
 let casaOk = "";
 let casaMal1 = "";
 let casaMal2 = "";
-let actoreOK = "";
+let actoreOk = "";
 let actoreMal1 ="";
 let actoreMal2 =  "";
 let nombres = [];
@@ -23,30 +22,33 @@ let puntaje = 0;
 let nombreIngresado = "";
 let nombreInv = "";
 let numOk= 0;
+let numMal1= 0;
+let numMal2= 0;
 let show1 = true;
 let objPuntajes = {TROMEDLOV: 1960, ENOIAMREH: 2220, RETTOPYRRAH: 1780};
-let inputNombre = document.getElementById("inputNombre")
-let showMagicName = document.getElementById("showMagicName")
-let selectorNombre = document.getElementById("selectorNombre")
-let reverseNameContainer = document.getElementById("reverseNameContainer")
-let yourMagicNameIs = document.getElementById("yourMagicNameIs")
-showMagicName.addEventListener("click", showReverseName)
-let botonEnviar= document.getElementById("botonEnviar")
-botonEnviar.addEventListener("click", puntuar)   
-let reverseName = ""
-let soundInit = new Audio("audio/AparicionLlegada-Impertecmi.mp3")
-listaPuntajes = document.getElementById("listaPuntajes")
-let botonNewCard=document.getElementById("botonNewCard")
-botonNewCard.addEventListener("click", nuevaCarta)
+let inputNombre = document.getElementById("inputNombre");
+let showMagicName = document.getElementById("showMagicName");
+let selectorNombre = document.getElementById("selectorNombre");
+let reverseNameContainer = document.getElementById("reverseNameContainer");
+let yourMagicNameIs = document.getElementById("yourMagicNameIs");
+let botonEnviar= document.getElementById("botonEnviar");
+let reverseName = "";
+let soundInit = new Audio("audio/AparicionLlegada-Impertecmi.mp3");
+let listaPuntajes = document.getElementById("listaPuntajes");
+let botonNewCard=document.getElementById("botonNewCard");
 let reverseNameDiv = document.getElementById("reverseNameDiv");
-
+showMagicName.addEventListener("click", showReverseName);
+botonNewCard.addEventListener("click", nuevaCarta);
+botonEnviar.addEventListener("click", puntuar)   ;
 
 /*funciones*/
 
+/*
 window.onload=function(){
     document.getElementById("soundInit").play();
     document.getElementById("song").play()
-  }
+  }*/
+
 
 function showReverseName(){ 
     reverseName = (inputNombre.value).split("").reverse().join("").toUpperCase()    
@@ -56,8 +58,8 @@ function showReverseName(){
     reverseNameContainer.style.display = "flex";
     reverseNameContainer.style.flexDirection = "column";
     reverseNameContainer.style.alignItems = "center";
-    
 }
+
 
 async function traerCarta() {
     /*funcion traer API*/
@@ -65,24 +67,20 @@ async function traerCarta() {
     const data = await response.json();
     const {name, actor, image, house,yearOfBirth} = data;   
       
-    /*genrar numero al azar, asigna 3 que no se repiten*/
-    function numeroPosibleAzar () {
-        return Math.floor(Math.random() * 25);
-    }
-        
-    numOk= numeroPosibleAzar(); 
-    numMal1= numeroPosibleAzar();
+    /*genrar numero al azar, asigna 3 que no se repiten*/       
+    numOk= numeroPosibleAzar(25,0); 
+    numMal1= numeroPosibleAzar(25,0);
 
     if (numMal1==numOk){
         return numMal1++;
      }
 
-    numMal2= numeroPosibleAzar()
+    numMal2= numeroPosibleAzar(25,0)
         if (numMal2==numOk || numMal2==numMal1) {
             return numMal2++;
         }
    
-        /*evaluar si esos numeros arrojan un dato (de la API) con todos sus campos completos y sino buscar  otro que sí*/  
+    /*evaluar si esos numeros arrojan un dato (de la API) con todos sus campos completos y sino buscar  otro que sí*/  
     function chequearNumMal1(x){
         if (x==numOk){
             x++;
@@ -108,7 +106,6 @@ async function traerCarta() {
         let fotoCarta = document.getElementById('fotoCarta');
         scrImg = data[numOk].image
         fotoCarta.style.backgroundImage = "url(" + scrImg + ")";
-        
 
 
         function asignAllSelects(){
@@ -121,10 +118,12 @@ async function traerCarta() {
                 nombres.sort();
 
                 const selectChar = document.getElementById("selectChar");
-                for (i in nombres){
-                    selectChar.insertAdjacentHTML("beforeend", `<option value="${nombres[i]}"> ${nombres[i]} </option>`)
+                let nom="";
+                for (nom in nombres){
+                    selectChar.insertAdjacentHTML("beforeend", `<option value="${nombres[nom]}"> ${nombres[nom]} </option>`)
                 }
             }
+
             function asignSelectHouse(){
                 casaOk=data[numOk].house;
                 casaMal1=data[numMal1].house;
@@ -133,8 +132,9 @@ async function traerCarta() {
                 casas.sort();
     
                 const selectHouse = document.getElementById("selectHouse");
-                for (i in nombres){
-                    selectHouse.insertAdjacentHTML("beforeend", `<option value="${casas[i]}"> ${casas[i]} </option>`)
+                let hou ="";
+                for (hou in casas){
+                    selectHouse.insertAdjacentHTML("beforeend", `<option value="${casas[hou]}"> ${casas[hou]} </option>`)
                 }
             }
 
@@ -146,8 +146,9 @@ async function traerCarta() {
                 actores.sort();
 
                 const selectActore = document.getElementById("selectActore");
-                for (i in nombres){
-                    selectActore.insertAdjacentHTML("beforeend", `<option value="${actores[i]}"> ${actores[i]} </option>`)
+                let act="";
+                for (act in actores){
+                    selectActore.insertAdjacentHTML("beforeend", `<option value="${actores[act]}"> ${actores[act]} </option>`)
                 }
             }
 
@@ -164,8 +165,12 @@ function nuevaCarta() {
     traerCarta()
     botonNewCard.style.display= "none";
     botonEnviar.style.display= "inline-block";
+    legendary.innerHTML="";
+    asteriscos.innerHTML="";
+    selectActore.insertAdjacentHTML("beforeend", `<option disabled selected>--pick actor/actress-- </option>`)
+    selectHouse.insertAdjacentHTML("beforeend", `<option disabled selected> --pick house-- </option>`)
+    selectChar.insertAdjacentHTML("beforeend", `<option disabled selected> --pick character-- </option>`)
     
-
 }
 
 function puntuar() {
@@ -178,11 +183,9 @@ function puntuar() {
     if (selectedChar==nombreOk){
         contador += 20
     }
-    
     if (selectedHouse==casaOk){
         contador += 30
     }   
-       
     if (selectedActore==actoreOk){
         contador += 50
     }
@@ -190,17 +193,33 @@ function puntuar() {
     puntaje += contador  
         
     reverseNameContainer.style.display = "none";
+
+    if (reverseName != "" ){
     objPuntajes[`${reverseName}`]=puntaje
-    
+    } else{
+        alert("Lord Voldemort says entering your name is mandatory, young pupil!")
+    }
 
     let valueKeyScorePairs = Object.entries(objPuntajes)
-   
+    console.log("pedo")
+    let i= "";
     for(i in valueKeyScorePairs){
         listaPuntajes.insertAdjacentHTML("beforeend", `<li>${(valueKeyScorePairs[i])[0]} : ${(valueKeyScorePairs[i])[1]} </li>`)  
     }
 
-    botonNewCard.style.display= "inline-block"
-    botonEnviar.style.display= "none"
+    botonNewCard.style.display= "inline-block";
+    botonEnviar.style.display= "none";
+
+    let legendary = document.getElementById('legendary');
+    let legendary_message = "Legendary Scores: ";
+    let asteriscos = document.getElementById('asteriscos');
+    let asteriscos_cantidad = "";
+    for (let i=0; i<legendary_message.length; i++){
+        asteriscos_cantidad += "*";
+        };
+
+    legendary.insertAdjacentText("beforeend", legendary_message);
+    asteriscos.insertAdjacentText("beforeend", asteriscos_cantidad);
 
     numOk=0;
     numMal1=0;

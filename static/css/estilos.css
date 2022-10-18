@@ -15,13 +15,14 @@ root{
 body{
     font-family: 'Amethysta', serif;
     background-color: #fde9d5;
+    font-size: 16px;
 }
 
 
 /* INDEX */
 
 #bodyIndex{
-    background-image: url('img/desktop/fondo landing desktop.png');
+    background-image: url('../../img/desktop/fondo landing desktop.png');
     object-fit: fill;
 }
 
@@ -49,6 +50,7 @@ body{
 
 #bodyCartaHarry{
     animation: transitionIn 0.5s;
+    
 }
 @keyframes transitionIn {
     from {
@@ -62,37 +64,30 @@ body{
 }
 
 #headerDesktop{ 
-    background-image: url("img/desktop/headerDesktopFondo.png"); 
+    background-image: url("../../img/desktop/headerDesktopFondo.png"); 
     min-height: 20vh;
+    width: 100vw;
+    margin:auto;
 }
 
-#contenedorLogoHeader{  
-    position: absolute;
-    top: 10%;  
-    left: 50%;
-    transform: translate(-50%, -50%);    
-}
 
 #flexLogoHeader{
     display: flex;
     justify-content: center;
     align-items: center;
-    scale: calc(0.75);
 }
-
-.signoPreguntaLogoHeader{
-    height: 152px;
+#logo-harry-carta{
+    max-width:18rem;
+    background-color: rgba(0,0,0,0.3);
+    padding-top: 1rem;
+    
+   
 }
-#logoHeader{
-    height: 169px;
-}
-
-
 #reverseNameContainer{
     margin: 25px auto;
     display: none;
     font-family: Harry;
-    font-size: 1.5em; 
+    font-size: 3em; 
     
 }
 @keyframes transitionSale {
@@ -106,17 +101,19 @@ body{
 
 
 .contenedorCartaHarry{
-    width: 10em;
-    
-    margin: 0px auto;
-    /* margin-top: 20px; */
+    width: 10rem;  
+     
     
 }
+
 #photo-frame{
-    background-image: url("./img/marco.png");   
+    background-image: url("../../img/marco.png");   
     background-repeat: no-repeat;
     height:25em; 
     width: 22em;   
+}
+.foto{
+    padding-bottom: 2rem;
 }
 #fotoCarta{
     height: 16em;
@@ -203,10 +200,12 @@ margin:5px auto;
 #reverseNameContainer{
     display: flex;
     flex-direction: row;
+    
 }
 #reverseNameDiv{
-    margin-top: 10px;
+    margin-top: 20px;
     font-family: Harry;
+    font-size: 2em;
 }
 #inputNombre{
     background-color:#F4F3F1;
@@ -258,7 +257,7 @@ text-align: center;
     margin-top: 0px;
     width: 400px;
     height: 300px;
-    background-image: url("img/pergamino_ok.png");
+    background-image: url("../../img/pergamino_ok.png");
     background-size:cover;
     background-repeat: no-repeat;
     position: relative;
