@@ -43,11 +43,11 @@ botonEnviar.addEventListener("click", puntuar)   ;
 
 /*funciones*/
 
-/*
+
 window.onload=function(){
     document.getElementById("soundInit").play();
     document.getElementById("song").play()
-  }*/
+  }
 
 
 function showReverseName(){ 
