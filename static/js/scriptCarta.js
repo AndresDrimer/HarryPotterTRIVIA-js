@@ -40,7 +40,7 @@ let reverseNameDiv = document.getElementById("reverseNameDiv");
 showMagicName.addEventListener("click", showReverseName);
 botonNewCard.addEventListener("click", nuevaCarta);
 botonEnviar.addEventListener("click", puntuar);
-
+lel listaPuntajes = doc.getElementById('listaPuntajes')
 
 /*funciones*/
 
@@ -54,6 +54,7 @@ function showReverseName(){
     reverseName = (inputNombre.value).split("").reverse().join("").toUpperCase()    
     if (reverseName.length>10){
         reverseNameDiv.style.fontSize="2rem";
+        listaPuntajes.style.fontsize="0.9em";
     }
     reverseNameDiv.insertAdjacentText('beforeend', reverseName);
     yourMagicNameIs.insertAdjacentText('beforeend', "Your magic name is: ");
