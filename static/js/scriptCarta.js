@@ -1,6 +1,6 @@
 import { numeroPosibleAzar } from './randomNum.js'
-/*declaracion de variables*/
 
+/*declaracion de variables*/
 const urlTodos = 'https://hp-api.herokuapp.com/api/characters';
 let nombreOk = "";
 let nombreMal1 = "";
@@ -39,10 +39,10 @@ let botonNewCard=document.getElementById("botonNewCard");
 let reverseNameDiv = document.getElementById("reverseNameDiv");
 showMagicName.addEventListener("click", showReverseName);
 botonNewCard.addEventListener("click", nuevaCarta);
-botonEnviar.addEventListener("click", puntuar)   ;
+botonEnviar.addEventListener("click", puntuar);
+
 
 /*funciones*/
-
 
 window.onload=function(){
     document.getElementById("soundInit").play();
@@ -201,9 +201,9 @@ function puntuar() {
     }
 
     let valueKeyScorePairs = Object.entries(objPuntajes)
-    console.log("pedo")
-    let i= "";
-    for(i in valueKeyScorePairs){
+    
+   
+    for(let i in valueKeyScorePairs){
         listaPuntajes.insertAdjacentHTML("beforeend", `<li>${(valueKeyScorePairs[i])[0]} : ${(valueKeyScorePairs[i])[1]} </li>`)  
     }
 
@@ -231,6 +231,8 @@ function puntuar() {
     selectHouse.innerHTML="";
     selectChar.innerHTML="";
 };
+
+
    
 
 
