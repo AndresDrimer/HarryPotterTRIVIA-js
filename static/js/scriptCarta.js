@@ -40,7 +40,6 @@ let reverseNameDiv = document.getElementById("reverseNameDiv");
 showMagicName.addEventListener("click", showReverseName);
 botonNewCard.addEventListener("click", nuevaCarta);
 botonEnviar.addEventListener("click", puntuar);
-lel listaPuntajes = doc.getElementById('listaPuntajes')
 
 /*funciones*/
 
