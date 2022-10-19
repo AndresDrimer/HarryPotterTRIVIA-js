@@ -18,6 +18,9 @@ body{
     font-size: 16px;
 }
 
+a{
+    list-style: none;
+}
 
 /* INDEX */
 
