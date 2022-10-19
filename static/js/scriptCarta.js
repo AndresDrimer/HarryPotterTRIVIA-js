@@ -52,6 +52,9 @@ window.onload=function(){
 
 function showReverseName(){ 
     reverseName = (inputNombre.value).split("").reverse().join("").toUpperCase()    
+    if (reverseName.length>10){
+        reverseNameDiv.style.fontSize="2rem";
+    }
     reverseNameDiv.insertAdjacentText('beforeend', reverseName);
     yourMagicNameIs.insertAdjacentText('beforeend', "Your magic name is: ");
     selectorNombre.style.display = "none";

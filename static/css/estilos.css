@@ -19,34 +19,25 @@ body{
 }
 
 a{
-    list-style: none;
+    text-decoration: none;
 }
 
+img{
+    max-width:100%;
+}
 /* INDEX */
 
 #bodyIndex{
     background-image: url('../../img/desktop/fondo landing desktop.png');
     object-fit: fill;
 }
-
-.contenedorLogoIndex{
+#bodyIndex{
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 40px 0; 
-    margin-top: 5em;  
-    scale:calc(0.6);
-    
 }
 
-.signoPreguntaIndex{
-    height: 10em;
-}
-
-#logoIndex{
-    height: 20em;
-    padding-bottom: 10px;
-}
 
 /* CARTA HARRY */
 
