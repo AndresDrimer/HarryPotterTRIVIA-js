@@ -15,17 +15,10 @@ let nombres = [];
 let casas = [];
 let actores = [];
 let scrImg = "https://hp-api.herokuapp.com/images/harry.jpg"; 
-let selectedName = "";
-let selectedHouse = "";
-let selectedActore = "";
 let puntaje = 0;
-let nombreIngresado = "";
-let nombreInv = "";
 let numOk= 0;
 let numMal1= 0;
 let numMal2= 0;
-let show1 = true;
-let objPuntajes = {TROMEDLOV: 1960, ENOIAMREH: 2220, RETTOPYRRAH: 1780};
 let puntajesArray = [
     {name: "TROMEDLOV", score: 1960}, 
     {name: "ENOIAMREH", score: 2220}, 
@@ -38,7 +31,6 @@ let reverseNameContainer = document.getElementById("reverseNameContainer");
 let yourMagicNameIs = document.getElementById("yourMagicNameIs");
 let botonEnviar= document.getElementById("botonEnviar");
 let reverseName = "";
-let soundInit = new Audio("audio/AparicionLlegada-Impertecmi.mp3");
 let listaPuntajes = document.getElementById("listaPuntajes");
 let botonNewCard=document.getElementById("botonNewCard");
 let reverseNameDiv = document.getElementById("reverseNameDiv");
@@ -236,7 +228,11 @@ function puntuar() {
     selectActore.innerHTML="";
     selectHouse.innerHTML="";
     selectChar.innerHTML="";
-    puntajesArray.pop();
+    /*borrar nombre duplicado del array*/
+    if (`${reverseName}` != ""){
+    let indexNamePlayer = puntajesArray.findIndex( key => key.name ==  `${reverseName}`)
+    puntajesArray.splice(indexNamePlayer, 1)
+    }
 };
 
 
