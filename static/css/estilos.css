@@ -28,7 +28,7 @@ img{
 /* INDEX */
 
 #bodyIndex{
-    background-image: url('../../img/desktop/fondo_al10.png');
+    background-image: url('../../img/desktop/fondo_al20.png');
     object-fit: fill;
     height: 100vh;
     display: flex;
@@ -63,7 +63,7 @@ img{
 }
 
 #headerDesktop{ 
-    background-image: url("../../img/desktop/headerDesktopFondo_al10.png"); 
+    background-image: url("../../img/desktop/headerDesktopFondo_al20.png"); 
     min-height: 20vh;
     width: 100vw;
     margin:auto;
