@@ -34,6 +34,7 @@ let reverseName = "";
 let listaPuntajes = document.getElementById("listaPuntajes");
 let botonNewCard=document.getElementById("botonNewCard");
 let reverseNameDiv = document.getElementById("reverseNameDiv");
+let ganaste = document.getElementById('ganaste')
 showMagicName.addEventListener("click", showReverseName);
 botonNewCard.addEventListener("click", nuevaCarta);
 botonEnviar.addEventListener("click", puntuar);
@@ -67,10 +68,9 @@ async function traerCarta() {
     const data = await response.json();
     const {name, actor, image, house,yearOfBirth} = data;   
       
-    /*genrar numero al azar, asigna 3 que no se repiten*/       
+       
     numOk= numeroPosibleAzar(25,0); 
     numMal1= numeroPosibleAzar(25,0);
-
     if (numMal1==numOk){
         return numMal1++;
      }
@@ -86,7 +86,6 @@ async function traerCarta() {
             x++;
         } while (data[x].house === "") {
             x++;}
-            
             numMal1=x;
             return numMal1;       
         }
@@ -101,7 +100,6 @@ async function traerCarta() {
             return numMal2;  
         }
         
-
         /* asignar imagen de la API*/
         let fotoCarta = document.getElementById('fotoCarta');
         scrImg = data[numOk].image
@@ -109,7 +107,7 @@ async function traerCarta() {
 
 
         function asignAllSelects(){
-
+           
             function asignSelectChar(){
                 nombreOk=data[numOk].name;
                 nombreMal1=data[numMal1].name;
@@ -192,14 +190,15 @@ function puntuar() {
     puntaje += contador  
         
     reverseNameContainer.style.display = "none";
-    /*para que borre el nombre inv si ya lo tiene*/
-
+    
+    /*avisar si no se ingreso nombre*/
     if (reverseName != "" ){
         puntajesArray.push({name: `${reverseName}`, score: `${puntaje}`})
     } else{
         alert("Lord Voldemort says entering your name is mandatory, young pupil!")
     }
 
+    /*ordenar array de puntajes*/
     puntajesArray.sort(function(a,b){return a.score - b.score;}).reverse()
     for(let i in puntajesArray){
         listaPuntajes.insertAdjacentHTML("beforeend", `<li>${(puntajesArray[i].name)} : ${(puntajesArray[i].score)} </li>`)  
@@ -219,6 +218,7 @@ function puntuar() {
     legendary.insertAdjacentText("beforeend", legendary_message);
     asteriscos.insertAdjacentText("beforeend", asteriscos_cantidad);
 
+    /*limpiar valores*/
     numOk=0;
     numMal1=0;
     numMal2=0;
@@ -232,7 +232,17 @@ function puntuar() {
     if (`${reverseName}` != ""){
     let indexNamePlayer = puntajesArray.findIndex( key => key.name ==  `${reverseName}`)
     puntajesArray.splice(indexNamePlayer, 1)
+    };
+
+    /*hacer festejo si se gana (hardcodeado)*/
+    if ( puntaje > 2200){
+        ganaste.style.display="block";
+        ganaste.insertAdjacentHTML("beforeend", `<h1> ${reverseName}, you are the New Master!!!!</h1>`);
+        document.getElementById("song").pause(); 
+        document.getElementById("victory-sound").play();
+         
     }
+    
 };
 
 

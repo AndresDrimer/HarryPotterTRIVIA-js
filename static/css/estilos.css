@@ -245,7 +245,18 @@ text-align: center;
     display: flex;
     justify-content: center;
 }
-   
+
+#ganaste{
+    background: linear-gradient(to right, rgba(228, 139, 23, 0.308) , rgba(255, 255, 0, 0.199));
+    border: 6px dotted black;
+    color: rgb(19, 4, 4);
+    font-family: Harry;
+    font-size: 2rem;
+    padding: 25px 50px 5px 50px;
+    max-width: 370px;
+    text-align: center;
+    display: none;
+}
 
  /* PUNTAJE  */
  #seccionPuntajes{
