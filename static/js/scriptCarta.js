@@ -26,6 +26,11 @@ let numMal1= 0;
 let numMal2= 0;
 let show1 = true;
 let objPuntajes = {TROMEDLOV: 1960, ENOIAMREH: 2220, RETTOPYRRAH: 1780};
+let puntajesArray = [
+    {name: "TROMEDLOV", score: 1960}, 
+    {name: "ENOIAMREH", score: 2220}, 
+    {name: "RETTOPYRRAH", score: 1780}
+];
 let inputNombre = document.getElementById("inputNombre");
 let showMagicName = document.getElementById("showMagicName");
 let selectorNombre = document.getElementById("selectorNombre");
@@ -121,8 +126,8 @@ async function traerCarta() {
                 nombres.sort();
 
                 const selectChar = document.getElementById("selectChar");
-                let nom="";
-                for (nom in nombres){
+                
+                for (let nom in nombres){
                     selectChar.insertAdjacentHTML("beforeend", `<option value="${nombres[nom]}"> ${nombres[nom]} </option>`)
                 }
             }
@@ -135,8 +140,8 @@ async function traerCarta() {
                 casas.sort();
     
                 const selectHouse = document.getElementById("selectHouse");
-                let hou ="";
-                for (hou in casas){
+                
+                for (let hou in casas){
                     selectHouse.insertAdjacentHTML("beforeend", `<option value="${casas[hou]}"> ${casas[hou]} </option>`)
                 }
             }
@@ -149,8 +154,8 @@ async function traerCarta() {
                 actores.sort();
 
                 const selectActore = document.getElementById("selectActore");
-                let act="";
-                for (act in actores){
+                
+                for (let act in actores){
                     selectActore.insertAdjacentHTML("beforeend", `<option value="${actores[act]}"> ${actores[act]} </option>`)
                 }
             }
@@ -192,22 +197,20 @@ function puntuar() {
     if (selectedActore==actoreOk){
         contador += 50
     }
-    
     puntaje += contador  
         
     reverseNameContainer.style.display = "none";
+    /*para que borre el nombre inv si ya lo tiene*/
 
     if (reverseName != "" ){
-    objPuntajes[`${reverseName}`]=puntaje
+        puntajesArray.push({name: `${reverseName}`, score: `${puntaje}`})
     } else{
         alert("Lord Voldemort says entering your name is mandatory, young pupil!")
     }
 
-    let valueKeyScorePairs = Object.entries(objPuntajes)
-    
-   
-    for(let i in valueKeyScorePairs){
-        listaPuntajes.insertAdjacentHTML("beforeend", `<li>${(valueKeyScorePairs[i])[0]} : ${(valueKeyScorePairs[i])[1]} </li>`)  
+    puntajesArray.sort(function(a,b){return a.score - b.score;}).reverse()
+    for(let i in puntajesArray){
+        listaPuntajes.insertAdjacentHTML("beforeend", `<li>${(puntajesArray[i].name)} : ${(puntajesArray[i].score)} </li>`)  
     }
 
     botonNewCard.style.display= "inline-block";
@@ -233,6 +236,7 @@ function puntuar() {
     selectActore.innerHTML="";
     selectHouse.innerHTML="";
     selectChar.innerHTML="";
+    puntajesArray.pop();
 };
 
 
