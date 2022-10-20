@@ -123,9 +123,17 @@ async function traerCarta() {
             }
 
             function asignSelectHouse(){
+                let todasLasCasas=["Gryffindor", "Slyterin", "Ravenclaw", "Hufflepuff"]
                 casaOk=data[numOk].house;
                 casaMal1=data[numMal1].house;
                 casaMal2=data[numMal2].house;
+                if (casaMal1 == ""){
+                    casaMal1 = "(no house)"
+                }
+                if (casaMal2 == ""){
+                    casaMal2 = "(no house)"
+                }
+                
                 casas.push(casaOk, casaMal1, casaMal2);
                 casas.sort();
     

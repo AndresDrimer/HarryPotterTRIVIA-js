@@ -90,6 +90,27 @@ img{
     font-size: 3em; 
     
 }
+.flechas{
+    width: 5rem;
+    padding: 0 15px; 
+    animation: blink 0.5s;
+    animation-iteration-count: infinite;
+}
+#flecha2{
+    transform: rotate(180deg); 
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes transitionSale {
     from {
         opacity:1 ;
