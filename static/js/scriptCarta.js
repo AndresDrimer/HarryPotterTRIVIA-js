@@ -135,6 +135,9 @@ async function traerCarta() {
                     casaMal2 = "(no house)"
                 }
                 */
+               if (casaOk == ""){
+                casaOk = "(no house)"
+               }
                for (let i=0; i<todasLasCasas.length; i++){
                 if (todasLasCasas[i]!= casaOk){
                     casas.push(todasLasCasas[i])
