@@ -123,8 +123,9 @@ async function traerCarta() {
             }
 
             function asignSelectHouse(){
-                let todasLasCasas=["Gryffindor", "Slyterin", "Ravenclaw", "Hufflepuff"]
+                let todasLasCasas=["Gryffindor", "Slytherin", "Ravenclaw", "Hufflepuff", "(no house)"]
                 casaOk=data[numOk].house;
+                /*
                 casaMal1=data[numMal1].house;
                 casaMal2=data[numMal2].house;
                 if (casaMal1 == ""){
@@ -133,8 +134,13 @@ async function traerCarta() {
                 if (casaMal2 == ""){
                     casaMal2 = "(no house)"
                 }
-                
-                casas.push(casaOk, casaMal1, casaMal2);
+                */
+               for (let i=0; i<todasLasCasas.length; i++){
+                if (todasLasCasas[i]!= casaOk){
+                    casas.push(todasLasCasas[i])
+                }
+               }
+                casas.push(casaOk);
                 casas.sort();
     
                 const selectHouse = document.getElementById("selectHouse");
