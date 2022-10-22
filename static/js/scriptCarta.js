@@ -6,8 +6,6 @@ let nombreOk = "";
 let nombreMal1 = "";
 let nombreMal2 = "";
 let casaOk = "";
-let casaMal1 = "";
-let casaMal2 = "";
 let actoreOk = "";
 let actoreMal1 ="";
 let actoreMal2 =  "";
@@ -20,9 +18,9 @@ let numOk= 0;
 let numMal1= 0;
 let numMal2= 0;
 let puntajesArray = [
-    {name: "TROMEDLOV", score: 1960}, 
-    {name: "ENOIAMREH", score: 2220}, 
-    {name: "RETTOPYRRAH", score: 1780}
+    {name: "TROMEDLOV", score: 1020}, 
+    {name: "ENOIAMREH", score: 2200}, 
+    {name: "RETTOPYRRAH", score: 10}
 ];
 let inputNombre = document.getElementById("inputNombre");
 let showMagicName = document.getElementById("showMagicName");
@@ -68,38 +66,19 @@ async function traerCarta() {
     const data = await response.json();
     const {name, actor, image, house,yearOfBirth} = data;   
       
-       
-    numOk= numeroPosibleAzar(25,0); 
-    numMal1= numeroPosibleAzar(25,0);
+ 
+    numOk= numeroPosibleAzar(25,0); // numero bien hasta el 25 porque los demas no incluyen imagen  
+    numMal1= numeroPosibleAzar(38,0); // a partir de 38 muchas veces no trae actor y no cambia casi nada
     if (numMal1==numOk){
         return numMal1++;
      }
 
-    numMal2= numeroPosibleAzar(25,0)
+    numMal2= numeroPosibleAzar(38,0) // a partir de 38 muchas veces no trae actor y no cambia casi nada
         if (numMal2==numOk || numMal2==numMal1) {
             return numMal2++;
         }
    
-    /*evaluar si esos numeros arrojan un dato (de la API) con todos sus campos completos y sino buscar  otro que sí*/  
-    function chequearNumMal1(x){
-        if (x==numOk){
-            x++;
-        } while (data[x].house === "") {
-            x++;}
-            numMal1=x;
-            return numMal1;       
-        }
-        
-        function chequearNumMal2(x){
-            if (x==numMal1){
-                x++;
-            }
-            while (data[x].house === "") {
-                x++;}
-            numMal2=x;
-            return numMal2;  
-        }
-        
+          
         /* asignar imagen de la API*/
         let fotoCarta = document.getElementById('fotoCarta');
         scrImg = data[numOk].image
@@ -125,16 +104,7 @@ async function traerCarta() {
             function asignSelectHouse(){
                 let todasLasCasas=["Gryffindor", "Slytherin", "Ravenclaw", "Hufflepuff", "(no house)"]
                 casaOk=data[numOk].house;
-                /*
-                casaMal1=data[numMal1].house;
-                casaMal2=data[numMal2].house;
-                if (casaMal1 == ""){
-                    casaMal1 = "(no house)"
-                }
-                if (casaMal2 == ""){
-                    casaMal2 = "(no house)"
-                }
-                */
+             
                if (casaOk == ""){
                 casaOk = "(no house)"
                }
@@ -252,15 +222,19 @@ function puntuar() {
     };
 
     /*hacer festejo si se gana (hardcodeado)*/
+    
     if ( puntaje > 2200){
         ganaste.style.display="block";
         ganaste.insertAdjacentHTML("beforeend", `<h1> ${reverseName}, you are the New Master!!!!</h1>`);
         document.getElementById("song").pause(); 
         document.getElementById("victory-sound").play();
          
-    }
-    
+        }
 };
+    
+    
+   
+    
 
 
    
@@ -268,7 +242,8 @@ function puntuar() {
 
 
 traerCarta()
- 
+
+
 
 
 

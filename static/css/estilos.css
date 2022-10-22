@@ -189,6 +189,15 @@ margin:5px auto;
 #botonNewCard{
     margin-left:10px;
     background-color:#8aa6aa;
+    animation: cambiaLetra 0.5s infinite;
+}
+@keyframes cambiaLetra{
+    from{
+        color: black;
+    }
+    to{
+        color: white;
+    }
 }
 #botoneraFinal{
     width: 100%;
@@ -344,7 +353,14 @@ text-align: center;
 }
 /* ADIOS */
 #logoAdios{
-    margin-top: 14%;
+    
+}
+#adios{
+    color:white;
+    font-family: Harry;
+    font-size: 7rem;
+    filter: drop-shadow(160px 16px 170px black);
+    letter-spacing: 0.7rem;
 }
 
 
