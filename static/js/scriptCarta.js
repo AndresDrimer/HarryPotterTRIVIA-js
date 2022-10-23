@@ -18,10 +18,10 @@ let numOk= 0;
 let numMal1= 0;
 let numMal2= 0;
 let puntajesArray = [
-    {name: "TROMEDLOV DROL", score: 1020}, 
-    {name: " REGNARG ENOIAMREH", score: 2200}, 
-    {name: "RETTOP YRRAH", score: 10},
-    {name: "YELSAEW NOR", score: 150},
+    {name: "TROMEDLOV DROL", score: 420}, 
+    {name: " REGNARG ENOIAMREH", score: 290}, 
+    {name: "RETTOP YRRAH", score: 180},
+    {name: "YELSAEW NOR", score: 70},
 ];
 let inputNombre = document.getElementById("inputNombre");
 let showMagicName = document.getElementById("showMagicName");
@@ -33,7 +33,14 @@ let reverseName = "";
 let listaPuntajes = document.getElementById("listaPuntajes");
 let botonNewCard=document.getElementById("botonNewCard");
 let reverseNameDiv = document.getElementById("reverseNameDiv");
-let ganaste = document.getElementById('ganaste')
+let ganaste = document.getElementById('ganaste');
+let perdiste = document.getElementById('perdiste');
+let ray1 = document.getElementById('ray1');
+let ray2 = document.getElementById('ray2');
+let ray3 = document.getElementById('ray3');
+let ray4 = document.getElementById('ray4');
+let ray5 = document.getElementById('ray5');
+let playedCards = [];
 showMagicName.addEventListener("click", showReverseName);
 botonNewCard.addEventListener("click", nuevaCarta);
 botonEnviar.addEventListener("click", puntuar);
@@ -69,6 +76,15 @@ async function traerCarta() {
       
  
     numOk= numeroPosibleAzar(25,0); // numero bien hasta el 25 porque los demas no incluyen imagen  
+    
+    //si repite vuelve a sacar carta
+    if (playedCards.includes(numOk)){
+        traerCarta();
+    }
+
+    playedCards.push(numOk) 
+    console.log("cartas jugadas: " + playedCards.toString());
+
     numMal1= numeroPosibleAzar(38,0); // a partir de 38 muchas veces no trae actor y no cambia casi nada
     if (numMal1==numOk){
         return numMal1++;
@@ -160,6 +176,7 @@ function nuevaCarta() {
 }
 
 function puntuar() {
+    
     
     let selectedActore = selectActore.value; 
     let selectedHouse = selectHouse.value; 
