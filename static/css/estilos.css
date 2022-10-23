@@ -297,7 +297,7 @@ text-align: center;
 #pergaminoPuntaje{
     margin-top: 0px;
     width: 400px;
-    height: 300px;
+    height: 350px;
     background-image: url("../../img/pergamino_ok.png");
     background-size:cover;
     background-repeat: no-repeat;
@@ -313,9 +313,11 @@ text-align: center;
     justify-content: center;
     align-items: center; 
     font-family: Harry;
-    font-size: 1.5em;
-    padding-top: 0.5em;
+    font-size: 1.4em;
+    padding: 0.5em 0.3em 0 0 ;
     list-style: none;
+    
+    
 }
 #botonNewCard{
     display: none;
@@ -352,9 +354,7 @@ text-align: center;
     margin: 3rem auto;
 }
 /* ADIOS */
-#logoAdios{
-    
-}
+
 #adios{
     color:white;
     font-family: Harry;

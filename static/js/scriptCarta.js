@@ -18,9 +18,10 @@ let numOk= 0;
 let numMal1= 0;
 let numMal2= 0;
 let puntajesArray = [
-    {name: "TROMEDLOV", score: 1020}, 
-    {name: "ENOIAMREH", score: 2200}, 
-    {name: "RETTOPYRRAH", score: 10}
+    {name: "TROMEDLOV DROL", score: 1020}, 
+    {name: " REGNARG ENOIAMREH", score: 2200}, 
+    {name: "RETTOP YRRAH", score: 10},
+    {name: "YELSAEW NOR", score: 150},
 ];
 let inputNombre = document.getElementById("inputNombre");
 let showMagicName = document.getElementById("showMagicName");
