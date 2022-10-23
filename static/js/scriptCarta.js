@@ -211,26 +211,31 @@ function giveResults(){
     perdiste.style.display="flex";
     botonNewGame.style.display="flex";
     document.getElementById("song").pause();
-    document.getElementById("losed").play()
+    let musicLose = document.getElementById("losed").play()
 
     let messageOff = "GAME TERMINATED: ";
     let messageLast = `${messageOff} you had quite a bad score, ${reverseName}. Watching a few more Harry Potter´s movies won´t hurt!`
     let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep trying!`
     let messageSecond =  `${messageOff} really well done ${reverseName}! Keep on practicing and you ´ll be a Master soon!`
-    let messageFirst =  `${messageOff} you are almost there ${reverseName}!, only with a tiny little bit of luck you will achieve success!!`
+    
 
     if (puntaje < puntajesArray[3].score){
-        perdiste.insertAdjacentHTML("beforeend", messageLast)
+        perdiste.insertAdjacentHTML("beforeend", messageLast);
+        musicLose;
         } 
     if (puntaje > puntajesArray[3].score && puntaje < puntajesArray[2].score){
-        perdiste.insertAdjacentHTML("beforeend", messageThird)
+        perdiste.insertAdjacentHTML("beforeend", messageThird);
+        musicLose;
         } 
     if (puntaje > puntajesArray[2].score && puntaje < puntajesArray[1].score){
-        perdiste.insertAdjacentHTML("beforeend", messageSecond)
+        perdiste.insertAdjacentHTML("beforeend", messageSecond);
+        musicLose;
         }
-    if (puntaje > puntajesArray[1].score && puntaje < puntajesArray[0].score){
-        perdiste.insertAdjacentHTML("beforeend", messageFirst)   
-    }
+    if ( puntaje > puntajesArray[1].score){
+            ganaste.style.display="block";
+            ganaste.insertAdjacentHTML("beforeend", `<h1> Congratulations ${reverseName}, you are the New Master!!!</h1>`);
+            document.getElementById("victory-sound").play();
+            }
 }
 
 
@@ -289,16 +294,7 @@ function puntuar() {
         let indexNamePlayer = puntajesArray.findIndex( key => key.name ==  `${reverseName}`)
         puntajesArray.splice(indexNamePlayer, 1)
         };
-
-        /*hacer festejo si se gana (hardcodeado)*/
-
-        if ( puntaje > 2200){
-            ganaste.style.display="block";
-            ganaste.insertAdjacentHTML("beforeend", `<h1> ${reverseName}, you are the New Master!!!!</h1>`);
-            document.getElementById("song").pause(); 
-            document.getElementById("victory-sound").play();
-
-            }
+        
     } else {
         alert("Lord Voldemort says entering your name is mandatory, young pupil!");
         playedCards.pop()
