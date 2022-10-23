@@ -288,6 +288,17 @@ text-align: center;
     display: none;
 }
 
+#perdiste{
+    border: 3px dotted black;
+    background-color: rgba(185, 8, 8, 0.2);
+    font-family: Harry;
+    font-size: 1.5rem;
+    padding: 25px 10px 5px 10px;
+    max-width: 370px;
+    text-align: center;
+    display: none;
+}
+
  /* PUNTAJE  */
  #seccionPuntajes{
     display: flex;

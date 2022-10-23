@@ -204,11 +204,36 @@ function evalQtyCards(num){
 
 function giveResults(){
     console.log("partida terminada, ver resultados")
+    botonNewCard.style.display="none";
+    perdiste.style.display="flex";
+
+    let messageOff = "GAME TERMINATED: ";
+    let messageLast = `${messageOff} you had quite a bad score, ${reverseName}. Watching a few more Harry Potter´s movies won´t hurt!`
+    let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep trying!`
+    let messageSecond =  `${messageOff} really well done ${reverseName}!, keep on practice and you ´ll be a Master soon!`
+    let messageFirst =  `${messageOff} you are almost there ${reverseName}!, only with a tiny little bit of luck you will achieve success!!`
+
+    if (puntaje < puntajesArray[3].score){
+        perdiste.insertAdjacentHTML("beforeend", messageLast)
+        } 
+    if (puntaje > puntajesArray[3].score && puntaje < puntajesArray[2].score){
+        perdiste.insertAdjacentHTML("beforeend", messageThird)
+        } 
+    if (puntaje > puntajesArray[2].score && puntaje < puntajesArray[1].score){
+        perdiste.insertAdjacentHTML("beforeend", messageSecond)
+        }
+    if (puntaje > puntajesArray[1].score && puntaje < puntajesArray[0].score){
+        perdiste.insertAdjacentHTML("beforeend", messageFirst)   
+    }
 }
+
+
+
 function puntuar() {
     if (reverseName != "" ){      
         
         //marcar jugada realizada con rayito amarillo 
+        console.log("play lenght" + playedCards.length)
         evalQtyCards(playedCards.length)
 
         let selectedActore = selectActore.value; 
