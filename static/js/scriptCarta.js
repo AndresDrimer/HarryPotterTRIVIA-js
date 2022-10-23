@@ -175,55 +175,7 @@ function nuevaCarta() {
     
 }
 
-function puntuar() {
-    
-    
-    let selectedActore = selectActore.value; 
-    let selectedHouse = selectHouse.value; 
-    let selectedChar = selectChar.value; 
-    let contador = 0
-    
-    if (selectedChar==nombreOk){
-        contador += 20
-    }
-    if (selectedHouse==casaOk){
-        contador += 30
-    }   
-    if (selectedActore==actoreOk){
-        contador += 50
-    }
-    puntaje += contador  
-        
-    reverseNameContainer.style.display = "none";
-    
-    /*avisar si no se ingreso nombre*/
-    if (reverseName != "" ){
-        puntajesArray.push({name: `${reverseName}`, score: `${puntaje}`})
-    } else{
-        alert("Lord Voldemort says entering your name is mandatory, young pupil!")
-    }
-
-    /*ordenar array de puntajes*/
-    puntajesArray.sort(function(a,b){return a.score - b.score;}).reverse()
-    for(let i in puntajesArray){
-        listaPuntajes.insertAdjacentHTML("beforeend", `<li>${(puntajesArray[i].name)} : ${(puntajesArray[i].score)} </li>`)  
-    }
-
-    botonNewCard.style.display= "inline-block";
-    botonEnviar.style.display= "none";
-
-    let legendary = document.getElementById('legendary');
-    let legendary_message = "Legendary Scores: ";
-    let asteriscos = document.getElementById('asteriscos');
-    let asteriscos_cantidad = "";
-    for (let i=0; i<legendary_message.length; i++){
-        asteriscos_cantidad += "*";
-        };
-
-    legendary.insertAdjacentText("beforeend", legendary_message);
-    asteriscos.insertAdjacentText("beforeend", asteriscos_cantidad);
-
-    /*limpiar valores*/
+function cleanAll(){
     numOk=0;
     numMal1=0;
     numMal2=0;
@@ -233,21 +185,74 @@ function puntuar() {
     selectActore.innerHTML="";
     selectHouse.innerHTML="";
     selectChar.innerHTML="";
-    /*borrar nombre duplicado del array*/
-    if (`${reverseName}` != ""){
-    let indexNamePlayer = puntajesArray.findIndex( key => key.name ==  `${reverseName}`)
-    puntajesArray.splice(indexNamePlayer, 1)
-    };
+ }
 
-    /*hacer festejo si se gana (hardcodeado)*/
-    
-    if ( puntaje > 2200){
-        ganaste.style.display="block";
-        ganaste.insertAdjacentHTML("beforeend", `<h1> ${reverseName}, you are the New Master!!!!</h1>`);
-        document.getElementById("song").pause(); 
-        document.getElementById("victory-sound").play();
-         
+function puntuar() {
+    if (reverseName != "" ){       
+        let selectedActore = selectActore.value; 
+        let selectedHouse = selectHouse.value; 
+        let selectedChar = selectChar.value; 
+        let contador = 0
+        
+        if (selectedChar==nombreOk){
+            contador += 20
         }
+        if (selectedHouse==casaOk){
+            contador += 30
+        }   
+        if (selectedActore==actoreOk){
+            contador += 50
+        }
+        puntaje += contador  
+
+        reverseNameContainer.style.display = "none";
+        puntajesArray.push({name: `${reverseName}`, score: `${puntaje}`})
+    
+        
+        /*ordenar array de puntajes*/
+        puntajesArray.sort(function(a,b){return a.score - b.score;}).reverse()
+        for(let i in puntajesArray){
+            listaPuntajes.insertAdjacentHTML("beforeend", `<li>${(puntajesArray[i].name)} : ${(puntajesArray[i].score)} </li>`)  
+        }
+
+        botonNewCard.style.display= "inline-block";
+        botonEnviar.style.display= "none";
+
+        let legendary = document.getElementById('legendary');
+        let legendary_message = "Legendary Scores: ";
+        let asteriscos = document.getElementById('asteriscos');
+        let asteriscos_cantidad = "";
+        for (let i=0; i<legendary_message.length; i++){
+            asteriscos_cantidad += "*";
+            };
+
+        legendary.insertAdjacentText("beforeend", legendary_message);
+        asteriscos.insertAdjacentText("beforeend", asteriscos_cantidad);
+
+        /*limpiar valores*/
+        
+        cleanAll();
+        /*borrar nombre duplicado del array*/
+        if (`${reverseName}` != ""){
+        let indexNamePlayer = puntajesArray.findIndex( key => key.name ==  `${reverseName}`)
+        puntajesArray.splice(indexNamePlayer, 1)
+        };
+
+        /*hacer festejo si se gana (hardcodeado)*/
+
+        if ( puntaje > 2200){
+            ganaste.style.display="block";
+            ganaste.insertAdjacentHTML("beforeend", `<h1> ${reverseName}, you are the New Master!!!!</h1>`);
+            document.getElementById("song").pause(); 
+            document.getElementById("victory-sound").play();
+
+            }
+    } else {
+        alert("Lord Voldemort says entering your name is mandatory, young pupil!");
+        playedCards.pop()
+        cleanAll();
+        nuevaCarta();
+    }
 };
     
     
