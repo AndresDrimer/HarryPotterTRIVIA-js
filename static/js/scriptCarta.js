@@ -187,8 +187,30 @@ function cleanAll(){
     selectChar.innerHTML="";
  }
 
+function evalQtyCards(num){
+    if (num==1){
+       ray1.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+        } if (num==2){
+            ray2.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+            }if (num==3){
+                ray3.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+                } if (num==4){
+                    ray4.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+                    } if (num==5){
+                        ray5.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+                        giveResults();
+                        }   
+}
+
+function giveResults(){
+    console.log("partida terminada, ver resultados")
+}
 function puntuar() {
-    if (reverseName != "" ){       
+    if (reverseName != "" ){      
+        
+        //marcar jugada realizada con rayito amarillo 
+        evalQtyCards(playedCards.length)
+
         let selectedActore = selectActore.value; 
         let selectedHouse = selectHouse.value; 
         let selectedChar = selectChar.value; 
@@ -230,7 +252,6 @@ function puntuar() {
         asteriscos.insertAdjacentText("beforeend", asteriscos_cantidad);
 
         /*limpiar valores*/
-        
         cleanAll();
         /*borrar nombre duplicado del array*/
         if (`${reverseName}` != ""){

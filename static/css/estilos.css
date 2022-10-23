@@ -330,7 +330,8 @@ text-align: center;
     justify-content: space-between;
 }
 .rays{
-    max-width: 50px;
+    background-image: url("../../img/harry-unchecked-ray-small.png");
+    width: 50px;
     height: 100px;
 }
 .listaRecords{
