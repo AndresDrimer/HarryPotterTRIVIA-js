@@ -322,6 +322,17 @@ text-align: center;
 #botonNewCard{
     display: none;
 }
+
+#container-rays{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+}
+.rays{
+    max-width: 50px;
+    height: 100px;
+}
 .listaRecords{
     font-family: Harry;
     font-size: 20px;
