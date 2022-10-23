@@ -51,7 +51,7 @@ botonNewGame.addEventListener("click", traerCarta)
 
 window.onload=function(){
     document.getElementById("soundInit").play();
-    document.getElementById("song").play()
+    document.getElementById("song").play();
   }
 
 
@@ -210,7 +210,8 @@ function giveResults(){
     botonNewCard.style.visibility= "hidden";
     perdiste.style.display="flex";
     botonNewGame.style.display="flex";
-   
+    document.getElementById("song").pause();
+    document.getElementById("losed").play()
 
     let messageOff = "GAME TERMINATED: ";
     let messageLast = `${messageOff} you had quite a bad score, ${reverseName}. Watching a few more Harry Potter´s movies won´t hurt!`
