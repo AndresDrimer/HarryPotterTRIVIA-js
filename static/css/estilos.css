@@ -373,8 +373,15 @@ text-align: center;
 
 }
 
-#botonTerminar{
-    margin: 3rem auto;
+#botonTerminar, #botonNewGame{
+    margin: 1.5rem auto;
+}
+
+#botonNewGame{
+    background-color: #8aa6aa;
+    animation: cambiaLetra 0.5s infinite;
+    display: none;
+    
 }
 /* ADIOS */
 
@@ -384,6 +391,7 @@ text-align: center;
     font-size: 7rem;
     filter: drop-shadow(160px 16px 170px black);
     letter-spacing: 0.7rem;
+    text-shadow: 10px 20px 1px black;
 }
 
 

@@ -41,9 +41,11 @@ let ray3 = document.getElementById('ray3');
 let ray4 = document.getElementById('ray4');
 let ray5 = document.getElementById('ray5');
 let playedCards = [];
+let botonNewGame = document.getElementById('botonNewGame')
 showMagicName.addEventListener("click", showReverseName);
 botonNewCard.addEventListener("click", nuevaCarta);
 botonEnviar.addEventListener("click", puntuar);
+botonNewGame.addEventListener("click", traerCarta)
 
 /*funciones*/
 
@@ -83,6 +85,7 @@ async function traerCarta() {
     }
 
     playedCards.push(numOk) 
+    playedCards = Array.from(new Set(playedCards)) //eliminar duplicados nuevamente?
     console.log("cartas jugadas: " + playedCards.toString());
 
     numMal1= numeroPosibleAzar(38,0); // a partir de 38 muchas veces no trae actor y no cambia casi nada
@@ -204,13 +207,15 @@ function evalQtyCards(num){
 
 function giveResults(){
     console.log("partida terminada, ver resultados")
-    botonNewCard.style.display="none";
+    botonNewCard.style.visibility= "hidden";
     perdiste.style.display="flex";
+    botonNewGame.style.display="flex";
+   
 
     let messageOff = "GAME TERMINATED: ";
     let messageLast = `${messageOff} you had quite a bad score, ${reverseName}. Watching a few more Harry Potter´s movies won´t hurt!`
     let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep trying!`
-    let messageSecond =  `${messageOff} really well done ${reverseName}!, keep on practice and you ´ll be a Master soon!`
+    let messageSecond =  `${messageOff} really well done ${reverseName}! Keep on practicing and you ´ll be a Master soon!`
     let messageFirst =  `${messageOff} you are almost there ${reverseName}!, only with a tiny little bit of luck you will achieve success!!`
 
     if (puntaje < puntajesArray[3].score){
