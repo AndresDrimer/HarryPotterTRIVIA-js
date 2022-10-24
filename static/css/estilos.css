@@ -277,7 +277,7 @@ text-align: center;
 }
 
 #ganaste{
-    background: linear-gradient(to right, rgba(228, 139, 23, 0.308) , rgba(255, 255, 0, 0.199));
+    background: linear-gradient(to right, rgb(20, 167, 123) , #bff0ce33);
     border: 6px dotted black;
     color: rgb(19, 4, 4);
     font-family: Harry;
@@ -286,17 +286,19 @@ text-align: center;
     max-width: 370px;
     text-align: center;
     display: none;
+    filter: drop-shadow(3px 3px 3px #4b4949);
 }
 
 #perdiste{
     border: 3px dotted black;
-    background-color: rgba(185, 8, 8, 0.2);
+    background: linear-gradient(to bottom, #f8d1b7 0%, #fabea6 100%);
     font-family: Harry;
     font-size: 1.5rem;
     padding: 25px 10px 5px 10px;
     max-width: 370px;
     text-align: center;
     display: none;
+    filter: drop-shadow(3px 3px 3px #4b4949);
 }
 
  /* PUNTAJE  */

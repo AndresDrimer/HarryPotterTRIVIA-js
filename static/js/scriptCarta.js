@@ -86,7 +86,7 @@ async function traerCarta() {
 
     playedCards.push(numOk) 
     playedCards = Array.from(new Set(playedCards)) //eliminar duplicados nuevamente?
-    console.log("cartas jugadas: " + playedCards.toString());
+    console.log("cartas jugadas nros: " + playedCards.toString());
 
     numMal1= numeroPosibleAzar(38,0); // a partir de 38 muchas veces no trae actor y no cambia casi nada
     if (numMal1==numOk){
@@ -246,7 +246,6 @@ function puntuar() {
     if (reverseName != "" ){      
         
         //marcar jugada realizada con rayito amarillo 
-        console.log("play lenght" + playedCards.length)
         evalQtyCards(playedCards.length)
 
         let selectedActore = selectActore.value; 
