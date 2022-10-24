@@ -341,7 +341,7 @@ text-align: center;
     justify-content: space-between;
 }
 .rays{
-    background-image: url("../../img/harry-unchecked-ray-small.png");
+    background-image: url("../../img/harry-unchecked-ray-md.png");
     width: 50px;
     height: 100px;
 }

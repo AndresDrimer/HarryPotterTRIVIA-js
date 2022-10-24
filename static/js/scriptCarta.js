@@ -192,15 +192,15 @@ function cleanAll(){
 
 function evalQtyCards(num){
     if (num==1){
-       ray1.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+       ray1.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
         } if (num==2){
-            ray2.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+            ray2.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
             }if (num==3){
-                ray3.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+                ray3.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
                 } if (num==4){
-                    ray4.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+                    ray4.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
                     } if (num==5){
-                        ray5.style.backgroundImage = "url('../../img/harry-checked-ray-small.png')";
+                        ray5.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
                         giveResults();
                         }   
 }
