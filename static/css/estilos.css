@@ -277,7 +277,7 @@ text-align: center;
 }
 
 #ganaste{
-    background: linear-gradient(to right, rgb(20, 167, 123) , #bff0ce33);
+    background: linear-gradient(to right, #8aa6aa, #bff0ce33);
     border: 6px dotted black;
     color: rgb(19, 4, 4);
     font-family: Harry;
