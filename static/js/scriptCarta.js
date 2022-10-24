@@ -237,6 +237,7 @@ function giveResults(){
             document.getElementById("victory-sound").play();
             document.getElementById("victory2").play();
             perdiste.style.visibility= "hidden";
+            confetti({spread: 180, particleCount: 150});
             }
 }
 
