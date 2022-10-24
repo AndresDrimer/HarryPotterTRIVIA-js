@@ -235,6 +235,8 @@ function giveResults(){
             ganaste.style.display="block";
             ganaste.insertAdjacentHTML("beforeend", `<h1> Congratulations ${reverseName}, you are the New Master!!!</h1>`);
             document.getElementById("victory-sound").play();
+            document.getElementById("victory2").play();
+            perdiste.style.visibility= "hidden";
             }
 }
 
@@ -275,6 +277,8 @@ function puntuar() {
 
         botonNewCard.style.display= "inline-block";
         botonEnviar.style.display= "none";
+        
+        
 
         let legendary = document.getElementById('legendary');
         let legendary_message = "Legendary Scores: ";
