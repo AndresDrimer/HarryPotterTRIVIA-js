@@ -210,7 +210,6 @@ function evalQtyCards(num){
 }
 
 function giveResults(){
-    console.log("partida terminada, ver resultados")
     botonNewCard.style.visibility= "hidden";
     perdiste.style.display="flex";
     botonNewGame.style.display="flex";
