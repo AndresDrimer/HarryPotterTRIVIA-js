@@ -391,6 +391,7 @@ text-align: center;
     color:white;
     font-family: Harry;
     font-size: 7rem;
+    font-weight: lighter;
     filter: drop-shadow(160px 16px 170px black);
     letter-spacing: 0.7rem;
     text-shadow: 10px 20px 1px black;

@@ -41,7 +41,12 @@ let ray3 = document.getElementById('ray3');
 let ray4 = document.getElementById('ray4');
 let ray5 = document.getElementById('ray5');
 let playedCards = [];
-let botonNewGame = document.getElementById('botonNewGame')
+let botonNewGame = document.getElementById('botonNewGame');
+let musicLose = document.getElementById("losed").play()
+let messageOff = "GAME TERMINATED: ";
+let messageLast = `${messageOff} you had quite a bad score, ${reverseName}. Watching a few more Harry Potter´s movies won´t hurt!`
+let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep trying!`
+let messageSecond =  `${messageOff} really well done ${reverseName}! Keep on practicing and you ´ll be a Master soon!`
 showMagicName.addEventListener("click", showReverseName);
 botonNewCard.addEventListener("click", nuevaCarta);
 botonEnviar.addEventListener("click", puntuar);
@@ -75,7 +80,6 @@ async function traerCarta() {
     const response = await fetch(urlTodos);
     const data = await response.json();
     const {name, actor, image, house,yearOfBirth} = data;   
-      
  
     numOk= numeroPosibleAzar(25,0); // numero bien hasta el 25 porque los demas no incluyen imagen  
     
@@ -94,20 +98,20 @@ async function traerCarta() {
      }
 
     numMal2= numeroPosibleAzar(38,0) // a partir de 38 muchas veces no trae actor y no cambia casi nada
-        if (numMal2==numOk || numMal2==numMal1) {
-            return numMal2++;
-        }
+    if (numMal2==numOk || numMal2==numMal1) {
+        return numMal2++;
+    }
    
           
-        /* asignar imagen de la API*/
-        let fotoCarta = document.getElementById('fotoCarta');
-        scrImg = data[numOk].image
-        fotoCarta.style.backgroundImage = "url(" + scrImg + ")";
+     /* asignar imagen de la API*/
+    let fotoCarta = document.getElementById('fotoCarta');
+    scrImg = data[numOk].image
+    fotoCarta.style.backgroundImage = "url(" + scrImg + ")";
 
 
-        function asignAllSelects(){
+    function asignAllSelects(){
            
-            function asignSelectChar(){
+        function asignSelectChar(){
                 nombreOk=data[numOk].name;
                 nombreMal1=data[numMal1].name;
                 nombreMal2=data[numMal2].name;
@@ -211,12 +215,7 @@ function giveResults(){
     perdiste.style.display="flex";
     botonNewGame.style.display="flex";
     document.getElementById("song").pause();
-    let musicLose = document.getElementById("losed").play()
-
-    let messageOff = "GAME TERMINATED: ";
-    let messageLast = `${messageOff} you had quite a bad score, ${reverseName}. Watching a few more Harry Potter´s movies won´t hurt!`
-    let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep trying!`
-    let messageSecond =  `${messageOff} really well done ${reverseName}! Keep on practicing and you ´ll be a Master soon!`
+   
     
 
     if (puntaje < puntajesArray[3].score){
@@ -309,7 +308,7 @@ function puntuar() {
     
     
    
-    
+  ///////////////////////////  
 
 
    
