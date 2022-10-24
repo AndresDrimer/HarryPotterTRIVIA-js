@@ -81,7 +81,7 @@ async function traerCarta() {
     const data = await response.json();
     const {name, actor, image, house,yearOfBirth} = data;   
  
-    numOk= numeroPosibleAzar(25,0); // numero bien hasta el 25 porque los demas no incluyen imagen  
+    numOk= numeroPosibleAzar(25,0); // numero hasta el 25 porque los demas no incluyen imagen lamentablemente 
     
     //si repite vuelve a sacar carta
     if (playedCards.includes(numOk)){
@@ -89,7 +89,7 @@ async function traerCarta() {
     }
 
     playedCards.push(numOk) 
-    playedCards = Array.from(new Set(playedCards)) //eliminar duplicados nuevamente?
+    playedCards = Array.from(new Set(playedCards)) //eliminar nro de carta duplicada del array
     console.log("cartas jugadas nros: " + playedCards.toString());
 
     numMal1= numeroPosibleAzar(38,0); // a partir de 38 muchas veces no trae actor y no cambia casi nada
