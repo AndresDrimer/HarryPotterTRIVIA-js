@@ -19,9 +19,9 @@ let numMal1= 0;
 let numMal2= 0;
 let puntajesArray = [
     {name: "TROMEDLOV DROL", score: 420}, 
-    {name: " REGNARG ENOIAMREH", score: 290}, 
-    {name: "RETTOP YRRAH", score: 180},
-    {name: "YELSAEW NOR", score: 70},
+    {name: " REGNARG ENOIAMREH", score: 280}, 
+    {name: "RETTOP YRRAH", score: 160},
+    {name: "YELSAEW NOR", score: 75},
 ];
 let inputNombre = document.getElementById("inputNombre");
 let showMagicName = document.getElementById("showMagicName");
@@ -44,9 +44,10 @@ let playedCards = [];
 let botonNewGame = document.getElementById('botonNewGame');
 let musicLose = document.getElementById("losed").play()
 let messageOff = "GAME TERMINATED: ";
-let messageLast = `${messageOff} you had quite a bad score, ${reverseName}. Watching a few more Harry Potter´s movies won´t hurt!`
-let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep trying!`
-let messageSecond =  `${messageOff} really well done ${reverseName}! Keep on practicing and you ´ll be a Master soon!`
+let messageLast = `${messageOff} you obtained quite a bad score, ${reverseName}. Watching a few more Harry Potter´s movies won´t hurt!`;
+let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep pumping!`;
+let messageSecond =  `${messageOff} really well done ${reverseName}! Keep on pumping and you ´ll become a Master in no time!`;
+
 showMagicName.addEventListener("click", showReverseName);
 botonNewCard.addEventListener("click", nuevaCarta);
 botonEnviar.addEventListener("click", puntuar);
@@ -270,8 +271,8 @@ function puntuar() {
         /*ordenar array de puntajes*/
         puntajesArray.sort(function(a,b){return a.score - b.score;}).reverse()
         for(let i in puntajesArray){
-            listaPuntajes.insertAdjacentHTML("beforeend", `<tr><th class="name">${(puntajesArray[i].name)} : </th>
-                                                           <th class="scores-in-board">${(puntajesArray[i].score)} </th></tr>`);
+            listaPuntajes.insertAdjacentHTML("beforeend", `<tr><td class="name">${(puntajesArray[i].name)} ::: </td>
+                                                           <td class="scores-in-board">${(puntajesArray[i].score)} </td></tr>`);
         }
 
         botonNewCard.style.display= "inline-block";
@@ -280,10 +281,10 @@ function puntuar() {
         
 
         let legendary = document.getElementById('legendary');
-        let legendary_message = "Legendary Scores: ";
+        let legendary_message = "Legendary Scores :::";
         let asteriscos = document.getElementById('asteriscos');
         let asteriscos_cantidad = "";
-        for (let i=0; i<legendary_message.length; i++){
+        for (let i=0; i<legendary_message.length+4; i++){
             asteriscos_cantidad += "*";
             };
 
@@ -300,9 +301,10 @@ function puntuar() {
         
     } else {
         alert("Lord Voldemort says entering your name is mandatory, young pupil!");
-        playedCards.pop()
+        playedCards.pop();
         cleanAll();
         nuevaCarta();
+        selectorNombre.style.display = "flex";
     }
 };
     
@@ -316,6 +318,7 @@ function puntuar() {
 
 
 traerCarta()
+
 
 
 
