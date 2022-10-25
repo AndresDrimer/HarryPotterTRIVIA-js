@@ -295,6 +295,7 @@ text-align: center;
     font-family: Harry;
     font-size: 1.5rem;
     padding: 25px 10px 5px 10px;
+    margin-bottom: 30px; 
     max-width: 370px;
     text-align: center;
     display: none;
@@ -344,7 +345,7 @@ text-align: center;
     justify-content: space-between;
 }
 .rays{
-    background-image: url("../../img/harry-unchecked-ray-md.png");
+    background-image: url("../../img/harry-ray-model2-unchecked.png");
     width: 50px;
     height: 100px;
 }
