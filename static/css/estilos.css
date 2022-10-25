@@ -318,20 +318,20 @@ text-align: center;
 } 
 .legendary, .chooseText{
     text-align: center;
+    font-size:1.3rem;
 }
 
 #listaPuntajes{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; 
     font-family: Harry;
-    font-size: 1.4em;
-    padding: 0.5em 0.3em 0 0 ;
+    font-size: 1.5em;
+    padding: 1.5em 0.5em 0 1em;
     list-style: none;
-    
+    line-height: 1.5em;
     
 }
+
 #botonNewCard{
     display: none;
 }
@@ -348,17 +348,37 @@ text-align: center;
     height: 100px;
 }
 .listaRecords{
-    font-family: Harry;
+   
     font-size: 20px;
-    margin-top: 55px;
     text-align: center;
     top: 50%;
     left: 50%;
     list-style-type: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+.name{
+    color:rgb(10, 10, 10);
+    justify-content: flex-start;
+    
+}
+.scores-in-board{
+    display: flex;
+    justify-content: flex-end;
+    width: 3em;
+    
+}
+table{
+    width:24rem;
+    
+}
+tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #puntajePropio{
-    font-size: 25px;
+    font-size: 10px;
 }
 .botonLink{
     text-decoration: none;

@@ -270,7 +270,8 @@ function puntuar() {
         /*ordenar array de puntajes*/
         puntajesArray.sort(function(a,b){return a.score - b.score;}).reverse()
         for(let i in puntajesArray){
-            listaPuntajes.insertAdjacentHTML("beforeend", `<li>${(puntajesArray[i].name)} : ${(puntajesArray[i].score)} </li>`)  
+            listaPuntajes.insertAdjacentHTML("beforeend", `<tr><th class="name">${(puntajesArray[i].name)} : </th>
+                                                           <th class="scores-in-board">${(puntajesArray[i].score)} </th></tr>`);
         }
 
         botonNewCard.style.display= "inline-block";
