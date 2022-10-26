@@ -44,7 +44,9 @@ let playedCards = [];
 let botonNewGame = document.getElementById('botonNewGame');
 let musicLose = document.getElementById("losed").play()
 let messageOff = "GAME TERMINATED: ";
-let messageLast = `${messageOff} you had quite a bad score, ${reverseName}. Watching a few more Harry Potter´s movies won´t hurt!`
+let messageLast = `${messageOff} 
+you had quite a bad score, ${reverseName}. 
+Watching a few more Harry Potter´s movies won´t hurt!`
 let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep trying!`
 let messageSecond =  `${messageOff} really well done ${reverseName}! Keep on practicing and you ´ll be a Master soon!`
 showMagicName.addEventListener("click", showReverseName);
@@ -196,15 +198,15 @@ function cleanAll(){
 
 function evalQtyCards(num){
     if (num==1){
-       ray1.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
+       ray1.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
         } if (num==2){
-            ray2.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
+            ray2.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
             }if (num==3){
-                ray3.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
+                ray3.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
                 } if (num==4){
-                    ray4.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
+                    ray4.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
                     } if (num==5){
-                        ray5.style.backgroundImage = "url('../../img/harry-checked-ray-md.png')";
+                        ray5.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
                         giveResults();
                         }   
 }
@@ -270,8 +272,11 @@ function puntuar() {
         /*ordenar array de puntajes*/
         puntajesArray.sort(function(a,b){return a.score - b.score;}).reverse()
         for(let i in puntajesArray){
-            listaPuntajes.insertAdjacentHTML("beforeend", `<li>${(puntajesArray[i].name)} : ${(puntajesArray[i].score)} </li>`)  
+            listaPuntajes.insertAdjacentHTML("beforeend", `<tr><td class="name">${(puntajesArray[i].name)} ::: </td>
+            <td class="scores-in-board">${(puntajesArray[i].score)} </td></tr>`)  
         }
+
+        
 
         botonNewCard.style.display= "inline-block";
         botonEnviar.style.display= "none";

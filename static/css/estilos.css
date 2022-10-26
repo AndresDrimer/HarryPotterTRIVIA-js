@@ -235,7 +235,7 @@ margin:5px auto;
 #reverseNameDiv{
     margin-top: 20px;
     font-family: Harry;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 #inputNombre{
     background-color:#F4F3F1;
@@ -293,12 +293,16 @@ text-align: center;
     border: 3px dotted black;
     background: linear-gradient(to bottom, #f8d1b7 0%, #fabea6 100%);
     font-family: Harry;
-    font-size: 1.5rem;
+    
+    font-size: 1.4rem;
     padding: 25px 10px 5px 10px;
+    margin-bottom: 30px; 
     max-width: 370px;
+    
     text-align: center;
     display: none;
     filter: drop-shadow(3px 3px 3px #4b4949);
+    text-shadow: 1px 0px 1px rgb(105, 100, 100);
 }
 
  /* PUNTAJE  */
@@ -318,20 +322,21 @@ text-align: center;
 } 
 .legendary, .chooseText{
     text-align: center;
+    font-size:1.3rem;
+    filter: drop-shadow(1px 0px 1px rgba(105, 100, 100, 0.5));
 }
 
 #listaPuntajes{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; 
     font-family: Harry;
-    font-size: 1.4em;
-    padding: 0.5em 0.3em 0 0 ;
+    font-size: 1.5em;
+    padding: 1.5em 0.5em 0 1em;
     list-style: none;
-    
+    line-height: 1.5em;
     
 }
+
 #botonNewCard{
     display: none;
 }
@@ -343,22 +348,55 @@ text-align: center;
     justify-content: space-between;
 }
 .rays{
-    background-image: url("../../img/harry-unchecked-ray-md.png");
+    background-image: url("../../img/harry-ray-model2-opacity50-border.png");
     width: 50px;
     height: 100px;
+    margin: 1rem 0 0.5rem 0;
+    scale: calc(0.8);
+    
+    filter: drop-shadow(5px 14px 1px rgba(105, 100, 100,0.4));
 }
 .listaRecords{
-    font-family: Harry;
-    font-size: 20px;
-    margin-top: 55px;
+   
+    font-size: 18px;
     text-align: center;
     top: 50%;
     left: 50%;
     list-style-type: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+.name{
+    color:rgb(10, 10, 10);
+    justify-content: flex-start;
+    filter: drop-shadow(5px 14px 1px rgba(105, 100, 100,0.4));
+    font-weight: 600;
+    
+}
+.scores-in-board{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.8em;
+    filter: drop-shadow(2px 1px 1px rgb(105, 100, 100));
+    
+}
+table{
+    width:23rem;
+    margin: -2rem 0 0 1rem;
+    
+}
+tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+td{
+    font-family: 'Amethysta' ;
+    font-size: 1.2rem;
+    line-height: 2.4rem;;
+}
 #puntajePropio{
-    font-size: 25px;
+    font-size: 10px;
 }
 .botonLink{
     text-decoration: none;
