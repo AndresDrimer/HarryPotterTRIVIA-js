@@ -293,13 +293,16 @@ text-align: center;
     border: 3px dotted black;
     background: linear-gradient(to bottom, #f8d1b7 0%, #fabea6 100%);
     font-family: Harry;
-    font-size: 1.5rem;
+    
+    font-size: 1.4rem;
     padding: 25px 10px 5px 10px;
     margin-bottom: 30px; 
     max-width: 370px;
+    
     text-align: center;
     display: none;
     filter: drop-shadow(3px 3px 3px #4b4949);
+    text-shadow: 1px 0px 1px rgb(105, 100, 100);
 }
 
  /* PUNTAJE  */
@@ -348,6 +351,7 @@ text-align: center;
     background-image: url("../../img/harry-ray-model2-unchecked.png");
     width: 50px;
     height: 100px;
+    margin-top: 1rem;
 }
 .listaRecords{
    

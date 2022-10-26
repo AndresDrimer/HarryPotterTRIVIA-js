@@ -266,7 +266,7 @@ function puntuar() {
         puntaje += contador  
 
         reverseNameContainer.style.display = "none";
-        puntajesArray.push({name: `${reverseName}`, score: `${puntaje}`})
+        puntajesArray.push({name: `>>> ${reverseName}`, score: `${puntaje}`})
     
         
         /*ordenar array de puntajes*/
@@ -294,11 +294,14 @@ function puntuar() {
 
         /*limpiar valores*/
         cleanAll();
+
         /*borrar nombre duplicado del array*/
         if (`${reverseName}` != ""){
         let indexNamePlayer = puntajesArray.findIndex( key => key.name ==  `${reverseName}`)
         puntajesArray.splice(indexNamePlayer, 1)
         };
+       //aca falta pasar a map y volver a array, se perdio y funcionaba diez puntos
+
         
     } else {
         alert("Lord Voldemort says entering your name is mandatory, young pupil!");
