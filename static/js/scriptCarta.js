@@ -45,11 +45,7 @@ let botonNewGame = document.getElementById('botonNewGame');
 let musicLose = document.getElementById("losed");
 let bass= document.getElementById('bass');
 let messageOff = "GAME TERMINATED: ";
-let messageLast = `<p>${messageOff}
-you had quite a bad score, ${reverseName}.
-Watching a few more Harry Potter´s movies won´t hurt!</p`
-let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep trying!`
-let messageSecond =  `${messageOff} really well done ${reverseName}! Keep on practicing and you ´ll be a Master soon!`
+
 showMagicName.addEventListener("click", showReverseName);
 botonNewCard.addEventListener("click", nuevaCarta);
 botonEnviar.addEventListener("click", puntuar);
@@ -198,19 +194,29 @@ function cleanAll(){
  }
 
 function evalQtyCards(num){
+    let raysArray=["ray1", "ray2", "ray3", "ray4", "ray5"]
+    let styleThunder= `.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";`; //armar esta concatenacion para abreviar
+    let styleShadow = `.style.filter = "drop-shadow(5px 14px 1px rgba(105, 100, 100,0.4))";`;
     document.getElementById('thunderSound').play()
-    if (num==1){
+
+  
+    if (num==1){       
        ray1.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
+       ray1.style.filter = "drop-shadow(5px 14px 1px rgba(105, 100, 100,0.4))";
         } if (num==2){
             ray2.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
+            ray2.style.filter = "drop-shadow(5px 14px 1px rgba(105, 100, 100,0.4))";
             }if (num==3){
                 ray3.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
+                ray3.style.filter = "drop-shadow(5px 14px 1px rgba(105, 100, 100,0.4))";
                 } if (num==4){
                     ray4.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
+                    ray4.style.filter = "drop-shadow(5px 14px 1px rgba(105, 100, 100,0.4))";
                     } if (num==5){
                         ray5.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
+                        ray5.style.filter = "drop-shadow(5px 14px 1px rgba(105, 100, 100,0.4))";
                         giveResults();
-                        }   
+                        }  
 }
 
 function giveResults(){
@@ -222,27 +228,38 @@ function giveResults(){
     
 
     if (puntaje < puntajesArray[3].score){
+        let messageLast = `${messageOff}
+        you had quite a low score this time, ${reverseName}.
+        Watching a few more Harry Potter´s movies won´t hurt!`
         perdiste.insertAdjacentHTML("beforeend", messageLast);
         musicLose.play();
         
         } 
     if (puntaje > puntajesArray[3].score && puntaje < puntajesArray[2].score){
+        let messageThird =  `${messageOff} 
+                    well ${reverseName} , it can be done better. 
+                    Keep trying!`
         perdiste.insertAdjacentHTML("beforeend", messageThird);
+        console.log(reverseName)
         musicLose.play();
        
         } 
     if (puntaje > puntajesArray[2].score && puntaje < puntajesArray[1].score){
+        let messageSecond =  `${messageOff} 
+        really well done ${reverseName}! 
+        Keep on practicing and you ´ll be a Master soon!`
         perdiste.insertAdjacentHTML("beforeend", messageSecond);
         musicLose.play();
         
         }
     if ( puntaje > puntajesArray[1].score){
             ganaste.style.display="block";
-            ganaste.insertAdjacentHTML("beforeend", `<h1> Congratulations ${reverseName}, you are the New Master!!!</h1>`);
+            ganaste.insertAdjacentHTML("beforeend", `<h1> Congratulations ${reverseName}, 
+            you are the New Master!!!</h1>`);
             document.getElementById("victory-sound").play();
             document.getElementById("victory2").play();
             perdiste.style.visibility= "hidden";
-            confetti({spread: 180, particleCount: 150});
+            confetti({spread: 180, particleCount: 300});
             }
 }
 
