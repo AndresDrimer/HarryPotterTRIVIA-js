@@ -42,11 +42,12 @@ let ray4 = document.getElementById('ray4');
 let ray5 = document.getElementById('ray5');
 let playedCards = [];
 let botonNewGame = document.getElementById('botonNewGame');
-let musicLose = document.getElementById("losed").play()
+let musicLose = document.getElementById("losed");
+let bass= document.getElementById('bass');
 let messageOff = "GAME TERMINATED: ";
-let messageLast = `${messageOff} 
-you had quite a bad score, ${reverseName}. 
-Watching a few more Harry Potter´s movies won´t hurt!`
+let messageLast = `<p>${messageOff}
+you had quite a bad score, ${reverseName}.
+Watching a few more Harry Potter´s movies won´t hurt!</p`
 let messageThird =  `${messageOff} well ${reverseName}, it can be done better. Keep trying!`
 let messageSecond =  `${messageOff} really well done ${reverseName}! Keep on practicing and you ´ll be a Master soon!`
 showMagicName.addEventListener("click", showReverseName);
@@ -197,6 +198,7 @@ function cleanAll(){
  }
 
 function evalQtyCards(num){
+    document.getElementById('thunderSound').play()
     if (num==1){
        ray1.style.backgroundImage = "url('../../img/harry-ray-model2-checked.png')";
         } if (num==2){
@@ -221,15 +223,18 @@ function giveResults(){
 
     if (puntaje < puntajesArray[3].score){
         perdiste.insertAdjacentHTML("beforeend", messageLast);
-        musicLose;
+        musicLose.play();
+        
         } 
     if (puntaje > puntajesArray[3].score && puntaje < puntajesArray[2].score){
         perdiste.insertAdjacentHTML("beforeend", messageThird);
-        musicLose;
+        musicLose.play();
+       
         } 
     if (puntaje > puntajesArray[2].score && puntaje < puntajesArray[1].score){
         perdiste.insertAdjacentHTML("beforeend", messageSecond);
-        musicLose;
+        musicLose.play();
+        
         }
     if ( puntaje > puntajesArray[1].score){
             ganaste.style.display="block";
